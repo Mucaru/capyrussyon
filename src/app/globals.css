@@ -1,0 +1,100 @@
+@import "tailwindcss";
+
+/* ---- Editorial design tokens ---- */
+:root {
+  --paper: #faf8f3;
+  --paper-dim: #f1ede3;
+  --ink: #1a1a1a;
+  --ink-soft: #3a3a36;
+  --caption: #5c5c52;
+  --rust: #c1440e;
+  --rust-soft: #e0c8b8;
+  --rule: #1a1a1a1a;
+  --surface: #ffffff;
+
+  /* dark mode tokens */
+  --paper-dark: #15140f;
+  --paper-dim-dark: #1d1c16;
+  --ink-dark: #f1ede3;
+  --ink-soft-dark: #d8d3c4;
+  --caption-dark: #9a9586;
+  --rust-dark: #e0743a;
+  --surface-dark: #1d1c16;
+  --rule-dark: #f1ede31a;
+}
+
+.dark {
+  --paper: var(--paper-dark);
+  --paper-dim: var(--paper-dim-dark);
+  --ink: var(--ink-dark);
+  --ink-soft: var(--ink-soft-dark);
+  --caption: var(--caption-dark);
+  --rust: var(--rust-dark);
+  --surface: var(--surface-dark);
+  --rule: var(--rule-dark);
+}
+
+@theme inline {
+  --color-paper: var(--paper);
+  --color-paper-dim: var(--paper-dim);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-caption: var(--caption);
+  --color-rust: var(--rust);
+  --color-rust-soft: var(--rust-soft);
+  --color-surface: var(--surface);
+  --color-rule: var(--rule);
+
+  --font-display: var(--font-fraunces);
+  --font-sans: var(--font-inter);
+  --font-mono: var(--font-jetbrains);
+}
+
+* {
+  border-color: var(--rule);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+::selection {
+  background: var(--rust);
+  color: var(--paper);
+}
+
+/* hairline rule utility */
+.rule {
+  border-color: var(--rule);
+}
+
+/* reduced motion respected globally */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* visible keyboard focus */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--rust);
+  outline-offset: 3px;
+}
