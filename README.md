@@ -1,14 +1,14 @@
-# Aiko Pradana — Portfolio
+# Capy Russyon — Portfolio
 
 Portfolio personal bergaya editorial/majalah digital, dibangun dengan Next.js App Router, Tailwind CSS v4, dan Framer Motion.
 
 ## Stack
 
-- **Next.js 16** (App Router, TypeScript)
-- **Tailwind CSS v4** — token desain didefinisikan langsung di `src/app/globals.css`
-- **Framer Motion** — animasi load sequence di hero, scroll reveal, hover interactions
-- **Resend** — pengiriman email dari form kontak
-- **lucide-react** — icon set
+* **Next.js 16** (App Router, TypeScript)
+* **Tailwind CSS v4** — token desain didefinisikan langsung di `src/app/globals.css`
+* **Framer Motion** — animasi load sequence di hero, scroll reveal, hover interactions
+* **Resend** — pengiriman email dari form kontak
+* **lucide-react** — icon set
 
 ## Menjalankan secara lokal
 
@@ -18,11 +18,11 @@ cp .env.example .env.local   # lalu isi RESEND_API_KEY dan CONTACT_TO_EMAIL
 npm run dev
 ```
 
-Buka [http://localhost:3000](http://localhost:3000).
+Buka http://localhost:3000.
 
 ## Struktur project
 
-```
+```text
 src/
 ├── app/
 │   ├── api/contact/route.ts   # API route — kirim email via Resend
@@ -31,22 +31,22 @@ src/
 │   └── page.tsx                # merakit semua section
 ├── components/
 │   ├── Masthead.tsx            # header ala majalah
-│   ├── Hero.tsx                 # signature animation: word reveal + drawing underline
+│   ├── Hero.tsx                # signature animation: word reveal + drawing underline
 │   ├── About.tsx
-│   ├── ProjectGrid.tsx          # daftar karya dengan hover-reveal detail
-│   ├── Contact.tsx              # form kontak
+│   ├── ProjectGrid.tsx         # daftar karya dengan hover-reveal detail
+│   ├── Contact.tsx             # form kontak
 │   ├── Footer.tsx
-│   └── ThemeToggle.tsx          # dark/light mode toggle
+│   └── ThemeToggle.tsx         # dark/light mode toggle
 └── data/
-    └── projects.ts              # data project — edit di sini untuk ganti konten
+    └── projects.ts             # data project — edit di sini untuk ganti konten
 ```
 
 ## Mengganti konten
 
-- **Nama, deskripsi diri, headline hero** → `src/components/Hero.tsx`, `src/components/Masthead.tsx`
-- **Daftar project** → `src/data/projects.ts`
-- **Info kontak (email, sosial media)** → `src/components/Contact.tsx`
-- **Warna & font** → `src/app/globals.css` (cari bagian `Editorial design tokens`)
+* **Nama, deskripsi diri, headline hero** → `src/components/Hero.tsx`, `src/components/Masthead.tsx`
+* **Daftar project** → `src/data/projects.ts`
+* **Info kontak (email, sosial media)** → `src/components/Contact.tsx`
+* **Warna & font** → `src/app/globals.css` (cari bagian `Editorial design tokens`)
 
 ## Setup email (Resend)
 
